@@ -17,4 +17,4 @@ K O N G R E G A T E
    \  /~\_/
     \/
 
-<<SHRED
+SHRED
