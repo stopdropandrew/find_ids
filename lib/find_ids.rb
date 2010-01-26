@@ -6,7 +6,8 @@ module ActiveRecordExtensions
     
     def find_column_values(column_name, options = {})
       # Get the results as an array of tiny hashes { "id" => "1" } and flatten them out to just the ids
-      find_multiple_column_values(column_name, options).map{|record| record[column_name.to_s]}
+      column_name_s = column_name.to_s
+      find_multiple_column_values(column_name, options).map{|record| record[column_name_s]}
     end
     
     def find_set_ids(options = {})
