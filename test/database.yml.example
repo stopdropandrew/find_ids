@@ -1,5 +1,6 @@
-adapter: mysql
-host: localhost
-database: find_ids_test
-username: andrew
-password: 
+find_ids_test:
+  adapter: mysql
+  host: localhost
+  database: find_ids_test
+  username: andrew
+  password: 
