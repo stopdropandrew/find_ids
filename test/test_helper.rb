@@ -5,7 +5,7 @@ require 'active_record/fixtures'
 require 'mocha'
 require 'yaml'
 
-ActiveRecord::Base.configurations = YAML::load(File.open(File.join(TEST_ROOT,'database.yml')))
+ActiveRecord::Base.configurations = YAML::load(File.open(File.join(File.dirname(__FILE__), 'database.yml')))
 ActiveRecord::Base.establish_connection(:find_ids_test)
 
 ActiveRecord::Schema.define do

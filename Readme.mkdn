@@ -20,13 +20,23 @@ Also:
 
 find_ids accepts all the normal ActiveRecord finder conditions.
 
-## Bugs?
+## Benchmarks
 
-* Let me know here: [Issue Tracking](http://github.com/stopdropandrew/find_ids/issues)
+Some benchmarks against a fairly "wide" table with 100 records, 10,000 times each. YMMV based on your particular circumstances, although find_ids should always be faster than instantiating records.  Benchmark script included, and it's super easy to just test on your own app.
+
+                                  user     system      total        real
+    find(:all).map           26.460000   3.130000  29.590000 ( 72.656614)
+    find(:all, :select).map  12.770000   0.560000  13.330000 ( 16.232474)
+    find_ids                  7.870000   0.340000   8.210000 ( 10.465719)
+
 
 ## Installation for Rails
 
 script/plugin install git://github.com/stopdropandrew/find_ids.git
+
+## Bugs?
+
+* Let me know here: [Issue Tracking](http://github.com/stopdropandrew/find_ids/issues)
 
 ## History
 
