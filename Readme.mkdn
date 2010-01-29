@@ -26,7 +26,7 @@ find_ids accepts all the normal ActiveRecord finder conditions.
 
 ## Installation for Rails
 
-script/plugin install http://github.com/stopdropandrew/find_ids.git
+script/plugin install git://github.com/stopdropandrew/find_ids.git
 
 ## History
 
