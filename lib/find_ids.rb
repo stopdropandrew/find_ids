@@ -21,8 +21,8 @@ module ActiveRecordExtensions
     def find_multiple_column_values(*column_names)
       options = column_names.extract_options!
       
-      distinct = "distinct" if options.delete(:distinct)
-      select_for_columns = column_names.map{|column_name| "#{distinct} #{quoted_table_name}.`#{column_name}`"}.join(', ')
+      select_for_columns = options.delete(:distinct) ? 'distinct ' : ''
+      select_for_columns << column_names.map{|column_name| "#{quoted_table_name}.`#{column_name}`"}.join(', ')
       sql = construct_finder_sql(options.merge( :select => select_for_columns ))
 
       array_of_hashes = connection.select_all(sql)
